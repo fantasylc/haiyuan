@@ -1,3 +1,4 @@
+#coding:utf-8
 from django.shortcuts import render,render_to_response
 from .models import Product,AboutUs
 from django.http import HttpResponse
