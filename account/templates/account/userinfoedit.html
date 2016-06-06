@@ -1,0 +1,50 @@
+<div class="userinfo-edit">
+    <div></div>
+    <div class="userinfo-form">
+      <form role="form" method="post" id = 'userinfi-edit-form'>
+        <div id="userinfo-error"></div>
+        <div class="uf-item">
+            <label >手机号:</label><span> &nbsp;&nbsp;&nbsp;{{ request.user.phone }}</span>
+        </div>
+        <div class="uf-item">
+            <label for="nickname">昵称:&nbsp;&nbsp;</label><input type="text" id="nickname" value="{{ request.user.nickname }}"/>
+        </div>
+        <div class="uf-item">
+            <label for="email"><span style="color:#dd2727">*</span>邮箱:&nbsp;&nbsp;</label><input type="text" id="email" value="{{ request.user.email }}"/>
+            <div id="uf-email-error"></div>
+        </div>
+        <div class="uf-item">
+            <label for="address"><span style="color:#dd2727">*</span>收货地址:&nbsp;&nbsp;</label><input type="text" id="address" value="{{ request.user.address }}"/>
+            <div id="uf-address-error"></div>
+        </div>
+        <div class="uf-item">
+            <label for="yuanxi">院系:&nbsp;&nbsp;</label>
+            <select id="yuanxi">
+                {% for yuanxi in yuanxis %}
+                    <option value="{{ yuanxi }}">{{ yuanxi }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="uf-item">
+            <label for="shenfen">身份:&nbsp;&nbsp;</label>
+            <select id="shenfen">
+                {% for role in roles %}
+                    <option value="{{ role }}">{{ role }}</option>
+                {% endfor %}
+            </select>
+        </div>
+       <div class="uf-item">
+           <label for="xuehao">学号(学生填写):&nbsp;&nbsp;</label><input id="xuehao" type="text" value="{{ request.user.xuehao }}"/>
+       </div>
+       <div class="uf-item">
+            <label for="realname"><span style="color:#dd2727">*</span>真实姓名:&nbsp;&nbsp;</label><input type="text" id="realname" value="{{ request.user.realname }}"/>
+            <div id="uf-realname-error"></div>
+       </div>
+
+      <div class="uf-item-button">
+          <input type="button" value="提交">
+      </div>
+     </form>
+    </div>
+</div>

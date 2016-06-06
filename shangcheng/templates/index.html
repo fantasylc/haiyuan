@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div id="main-body">
+    <div class="row index-search">
+       <div class="col-lg-4 col-md-4 col-sm-4 logo hidden-xs">
+         <img src="/static/image/logo.png" alt="">
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-4">
+         <div class="input-group search-form">
+             <form role="form" method="get" class="form-search" action="/search/">
+                 <div class="input-group">
+                    <input type="text" class="form-control search-input" id='word' name='word' required="required" placeholder="看看有没有你想要的">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default btn-search" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                 </div>
+              </form>
+         </div>
+       </div>
+    </div>
+
+    <div class="row index-main">
+      <div class="wrapper col-lg-2 col-md-2 col-sm-2">
+            {% include 'includes/nav_fenlei.html' %}
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-7">
+          {% include 'includes/carousel.html' %}
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+          欢迎来到海源文体办公
+      </div>
+    </div>
+
+    <div class='index-tuijian'>
+       {% for product in pd_tuijians %}
+           {% include 'widget/index_item_list.html' %}
+       {% endfor %}
+    </div>
+</div>
+{% endblock %}

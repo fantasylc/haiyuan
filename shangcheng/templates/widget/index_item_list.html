@@ -1,0 +1,24 @@
+<div class="index-item-list">
+    <div class='index-item-list-img'>
+        <a href="/product/{{ product.uid }}/" title="查看详情">
+          <img src="/media/{{ product.img_show }}" alt=""/>
+        </a>
+      </div>
+      <div class="index-item-list-prize">
+        ¥{{ product.versions.all.0.now_price }}
+          <span style="color: #269abc;float: right">
+              <a href="/product/{{ product.uid }}/" title="查看详情">{{ product.name | slice:":8"}}</a>
+          </span>
+      </div>
+      <div class="index-item-list-intr">
+        <a href="/product/{{ product.uid }}/" title="查看详情">
+            {{ product.desc | slice:":25"}}
+        </a>
+      </div>
+      <div class="index-item-list-btn">
+
+          <a href="/product/{{ product.uid }}/">
+              <button type="button"> 买买买</button></a>
+
+      </div>
+  </div>

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>关于我们-海源文体办公</title>
+  <style>
+  body{background:url("/static/image/haida.jpg") no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-attachment: fixed;}
+  </style>
+{% endblock %}
+{% block main %}
+      <div class="row">
+      <div class="col-lg-7 col-md-7 col-sm-7">
+
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-5">
+          <div class="login-form login-form2">
+              <div class="login-form-main">
+                  <div>
+                      <h4 style="padding-left: 20px;color: #dd2727;margin-bottom: 20px">请先登陆</h4>
+                  </div>
+                  <form class="signin" id='login-form-id' name="loginform" method="post" role="form">
+                   {% csrf_token %}
+                      <ul>
+                        <li id="login-error">
+
+                        </li>
+                        <li>
+                            <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
+                            <input class="login-phone" id='login-phone' type="text" name="login-phone" placeholder="手机号" required="required" />
+                        </li>
+                        <li>
+                            <span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;
+                            <input class="login-pwd" type="password" id='login-pwd' name="login-pwd" placeholder="密码" required="required"/>
+                        </li>
+
+                        <li>
+                            <button class="btn btn-primary btn-login" id='login-submit' type="button" name="login-submit">登录</button>
+                        </li>
+                        <li style="margin-left: 40%">
+                            忘记密码?&nbsp;<a href="/account/forgetpassword/">找回</a>
+                        </li>
+                      </ul>
+                  </form>
+              </div>
+    </div>
+      </div>
+      </div>
+{% endblock %}

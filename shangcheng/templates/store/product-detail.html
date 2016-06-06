@@ -1,0 +1,99 @@
+{% extends 'store_main.html' %}
+
+
+
+{% block main %}
+ <div>
+     <div></div>
+     <div class="row">
+         <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+
+         </div>
+         <div class="col-lg-8 col-md-8 col-sm-8 product-detail-main">
+             <div class="row">
+                 <div class="col-lg-5 col-md-5 col-sm-5 ">
+                     <div class="product-img-main">
+                     <img src="/media/{{ product.img_show }}"/>
+                     </div>
+                     <div class="row product-thum">
+                        {% if product.img_detail_1 %}
+                         <div class="col-lg-4 col-md-4 col-sm-4 img-thum">
+                             <img src="/media/{{ product.img_detail_1 }}"/>
+                         </div>
+                         {% endif %}
+                         {% if product.img_detail_2 %}
+                         <div class="col-lg-4 col-md-4 col-sm-4 img-thum">
+                             <img src="/media/{{ product.img_detail_2 }}"/>
+                         </div>
+                         {% endif %}
+                         {% if product.img_detail_3 %}
+                         <div class="col-lg-4 col-md-4 col-sm-4 img-thum">
+                             <img src="/media/{{ product.img_detail_3 }}"/>
+                         </div>
+                         {% endif %}
+                     </div>
+                 </div>
+                 <div class="col-lg-7 col-md-7 col-sm-7 product-show">
+                     <div class="product-name">
+                         {{ product.name }}
+                     </div>
+                     <div class="hr_div"></div>
+                     <div class="product-id">
+                        <span>商品编号:&nbsp;&nbsp;{{ product.id }}</span>
+                         <input id="pd-id" type="hidden" value="{{ product.id }}"/>
+                         <span class="product-unit">单位: {{ product.unit }}</span>
+                     </div>
+                     <div class="hr_div"></div>
+
+                     <div class="product-old_price">
+                         <span> 原价:&nbsp;&nbsp;&nbsp;</span><span class="old-price">¥{{ product.versions.all.0.old_price}}</span>
+                     </div>
+                     <div class="product-now_price">
+                         <span>现价:&nbsp;&nbsp;&nbsp;</span><span class="now-price">¥{{ product.versions.all.0.now_price }}</span>
+                     </div>
+                     <div class="product-sales">
+                         <span>销量:&nbsp;&nbsp;&nbsp;</span>{{ product.sales }}
+                     </div>
+                     <div class="product-quantity">
+
+                         <span>数量</span>&nbsp;&nbsp;&nbsp;
+                         <span class="product-sub" id="product-sub"><span class="fa fa-minus-square-o"></span>&nbsp;</span>
+                         <input class="product-quan-input" id="pd-quantity" style="width: 40px;" value="1" type="text" maxlength="8"/>
+                         <span class="product-add" id="product-add"><span class="fa fa-plus-square-o "></span></span>
+
+                     </div>
+                     <div class="add-cart">
+                         <button id="add-to-cart">
+                             <span class="fa fa-cart-plus"></span>&nbsp;&nbsp;加入购物车
+                         </button>
+                     </div>
+                 </div>
+             </div>
+          <br/>
+          <div class="hr_div_l"></div>
+          <div>
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs nav-product-detail" role="tablist">
+                  <li role="presentation" class="active">
+                      <a href="#product-detail" aria-controls="product-detail" role="tab" data-toggle="tab">商品详情</a>
+                  </li>
+                  <li role="presentation">
+                      <a href="#product-comment" aria-controls="profile" role="tab" data-toggle="tab">商品评价</a>
+                  </li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content product-detail-comment">
+                  <div role="tabpanel" class="tab-pane active" id="product-detail">{{ product.detail }}</div>
+                  <div role="tabpanel" class="tab-pane" id="product-comment">灰常的好用啦啦</div>
+               </div>
+
+           </div>
+
+         </div>
+     </div>
+
+
+ </div>
+
+{% endblock %}

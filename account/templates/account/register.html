@@ -1,0 +1,42 @@
+<div class="reg-popover">
+    <div class="register-title">
+          <a href="javascript:;" title="关闭" class="register-close"><span class="glyphicon glyphicon-remove"></span></a>
+          <h3>欢迎注册海源文体</h3>
+     </div>
+    <div class="register-form">
+    <form class="register" id='reg-form-id' name="registerform"  action="/userauth/login/" method="post">
+           {% csrf_token %}
+            <ul>
+                <li id="reg-error">
+
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;
+                    <input class="register-phone" id='reg-phone' type="text" name="reg-phone" placeholder="手机号" required="required" />
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;
+                    <input class="register-email" id='reg-email' type="text" name="reg-email" placeholder="邮箱" required="required" />
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;
+                    <input class="register-pwd" type="password" id='reg-pwd1' name="reg-pwd1" placeholder="密码" required="required"/>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;
+                    <input class="register-pwd" type="password" id='reg-pwd2' name="reg-pwd2" placeholder="确认密码" required="required"/>
+                </li>
+
+                <li>
+                    <input class="btn btn-primary btn-register" id='reg-submit' type="button"  name="reg-submit" value="注册" />
+                </li>
+            </ul>
+        </form>
+        </div>
+</div>
+<div class="popover-mask"></div>
+<script language="JavaScript" type="text/javascript">
+
+
+
+</script>

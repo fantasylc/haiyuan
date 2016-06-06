@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn" {% block html %}{% endblock %}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="baidu-site-verification" content="xa5I7tBFcv" />
+    <meta http-equiv="pragma" content="no-cache"/>
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <!--手机html -->
+{#    <meta name="viewport" content="width=device-width, initial-scale=1" />#}
+   <link rel="icon" type="image/x-icon" href="" />
+   <link rel="shortcut icon" href="" type="image/x-icon" />
+   <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css"/>
+   <link rel="stylesheet" type="text/css" href="/static/font-awesome/css/font-awesome.min.css"/>
+   <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
+    {% block head %}
+    {% endblock %}
+</head>
+<body id="base_body">
+
+{% include 'includes/nav.html' %}
+
+<div id="main">
+ <div id="content">
+    {% block main %}{% endblock %}
+
+    {% include 'account/login.html' %}
+    {% include 'account/register.html' %}
+ </div>
+ <div>
+  <a href="/viewcart/?next={{ request.path }}" id='gouwuche'>
+    <span class="fa fa-shopping-cart fa-lg"></span>
+  </a>
+  <a href="javascript:;" id="btn_returntop" title="回到顶部">
+    <span class="fa fa-arrow-up fa-lg"></span>
+  </a>
+ </div>
+ <footer class="footer" id="footer">
+     <div class="container footer-text">
+         <p class="text-muted">©2016 海源文体办公&nbsp;&nbsp;All Rights Reserved </p>
+     </div>
+ </footer>
+
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+<script src="/static/js/index.js" type="text/javascript" charset="utf-8"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

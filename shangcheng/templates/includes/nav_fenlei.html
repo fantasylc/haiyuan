@@ -1,0 +1,28 @@
+<div class='sub-col'>
+    <div class="category">
+        <div id="spfenlei">
+            所有商品分类
+        </div>
+        <div id='hy_cate'>
+            <ul id="hy_category" class="item">
+                {% for topfenlei in topfenleis %}
+                    <li>{{ topfenlei.name }}</li>
+                {% endfor %}
+            </ul>
+            <div>
+                <div id="hy_popCategory" class="pop-category">
+                    {% for top in topfenleis %}
+                    <div class='sub-item' style='display:none;'>
+                      {% for child in top.childs.all %}
+                         <span>
+                          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                          <a href="/productcategory/{{ child.uid }}/">{{ child.name }}</a>
+                         </span>
+                      {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>

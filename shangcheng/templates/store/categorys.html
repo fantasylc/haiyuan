@@ -1,0 +1,28 @@
+{% extends 'store_main.html' %}
+
+{% block main %}
+    <div class="container">
+       <div class="row">
+           <div class="col-lg-1 col-sm-1 col-md-1">
+
+           </div>
+           <div class="col-lg-11 col-md-11 col-sm-11">
+              <div>
+                  <ol class="breadcrumb">
+                    <li class="nav-category-parent">{{ category.parent.name }}</li>
+                    <li class="nav-category-active">{{ category.name }}</li>
+                  </ol>
+              </div>
+               <div class="category-main">
+                 {% for product in products %}
+                     {% include 'includes/product-item.html' %}
+                 {% endfor %}
+               {% if not products %}
+                   <div style="text-align: center"><h3 style="color: #dd2727">空空如也</h3></div>
+               {% endif %}
+
+               </div>
+           </div>
+       </div>
+    </div>
+{% endblock %}

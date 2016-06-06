@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block head %}
+  <title>关于我们-海源文体办公</title>
+  <style>
+  body{background:url("/static/image/about-bgimg.png") no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-attachment: fixed;}
+  </style>
+{% endblock %}
+{% block main %}
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1">
+
+      </div>
+      <div class="col-lg-8 col-sm-8 col-md-8 col-xs-10">
+         <div id="about-us-content">
+                {{ about.content | safe}}
+         </div>
+      </div>
+    </div>
+{% endblock %}

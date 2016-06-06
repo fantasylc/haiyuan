@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block head %}
+    <style>
+    body{
+        background-color: #f2f2f2;
+        color: #3f3f3f;
+    }
+    </style>
+{% endblock %}
+{% block main %}
+    <div class="row userinfo">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 ">
+             <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active">
+                      <a href="#userinfo-edit" aria-controls="userinfo-edit" role="tab" data-toggle="tab">编辑资料</a>
+                  </li>
+                  <li role="presentation">
+                      <a href="#change-passwd" aria-controls="change-passpd" role="tab" data-toggle="tab">修改密码</a>
+                  </li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content product-detail-comment">
+                  <div role="tabpanel" class="tab-pane active" id="userinfo-edit">
+                      {% include 'account/userinfoedit.html' %}
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="change-passwd">
+                      <div style="color: red" id='change-passwd-error'></div>
+                      {{ passwdresetform.as_p }}
+                      <div>
+                          <button id="passwd-change-submit">提交</button>
+                      </div>
+                  </div>
+              </div>
+
+    </div>
+
+    </div>
+{% endblock %}

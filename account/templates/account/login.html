@@ -1,0 +1,32 @@
+<div class="theme-popover">
+    <div class="login-title">
+          <a href="javascript:;" title="关闭" class="login-close"><span class="glyphicon glyphicon-remove"></span></a>
+          <h3>欢迎来到海源文体</h3>
+     </div>
+    <div class="login-form">
+    <form class="signin" id='login-form-id' name="loginform" method="post" role="form">
+            {% csrf_token %}
+            <ul>
+                <li id="login-error">
+
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
+                    <input class="login-phone" id='login-phone' type="text" name="login-phone" placeholder="手机号" required="required" />
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;
+                    <input class="login-pwd" type="password" id='login-pwd' name="login-pwd" placeholder="密码" required="required"/>
+                </li>
+
+                <li>
+                    <button class="btn btn-primary btn-login" id='login-submit' type="button" name="login-submit">登录</button>
+                </li>
+                <li style="margin-left: 40%">
+                    忘记密码?&nbsp;<a href="/account/forgetpassword/">找回</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+<div class="popover-mask"></div>
