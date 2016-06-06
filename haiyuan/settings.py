@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE':'django.db.backends.mysql',
         'NAME':'haiyuandb',
         'USER':'root',
-        
+        'PASSWORD':'2898827027',
         'HOST':'127.0.0.1',
         'PORT':3306,
     }
@@ -127,7 +127,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'liuchao_824@163.com'
-
+EMAIL_HOST_PASSWORD = 'akinnnuyohqzcmlx'
 EMAIL_SUBJECT_PREFIX = '海源文体'
 EMAIL_USE_TLS = True
 

@@ -227,6 +227,7 @@ class Order(models.Model):
     total_money = models.FloatField(default=0.0,verbose_name='总价')
 
     def save(self,*args,**kwargs):
+        super(Order,self).save(*args,**kwargs)
         self.uid = uuid.uuid5(uuid.NAMESPACE_DNS,str(self.pk))
         super(Order,self).save(*args,**kwargs)
 
