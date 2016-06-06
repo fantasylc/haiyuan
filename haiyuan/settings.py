@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE':'django.db.backends.mysql',
         'NAME':'haiyuandb',
         'USER':'root',
-        'PASSWORD':'2898827027',
+        
         'HOST':'127.0.0.1',
         'PORT':3306,
     }
